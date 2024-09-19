@@ -14,7 +14,7 @@ public class AppDelegate : UIApplicationDelegate {
 
         };
 
-        detailItems.GroupBy(query => query.FamilyID);
+        detailItems.GroupBy(query => query.FamilyID); // Removing this line makes breakpoints in TestClassLib work again
 
         return true;
 	}
