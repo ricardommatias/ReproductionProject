@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+    <WarningLevel>4</WarningLevel>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CreatePackage>false</CreatePackage>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="TestClassLib\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Base.lproj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestClassLib\TestClassLib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="..\TestClassLib\Base.lproj\TestStoryboard.storyboard">
+      <Link>Base.lproj\TestStoryboard.storyboard</Link>
+    </InterfaceDefinition>
+  </ItemGroup>
+</Project>
